@@ -7,52 +7,62 @@ import PopularRadio from "./PopularRadio";
 import "../Home.css";
 import ModoDarkWhite from "../components/ModoDarkWhite";
 import Barra from "../components/Barra.jsx";
+
 const Home = () => {
   return (
     <>
-      <div
+      <main
         className="container_da_home"
         id="container_main_home"
         onClick={() => ModoDarkWhite}
       >
-        <section className="container_da_section_left_home">
-          <div className="container_da_library">
-            <h2 className="container_da_library_icon">
-              {" "}
-              <img className="iconeLivraria" src={iconeLivraria} alt="" />
+        <aside className="container_da_section_left_home">
+          <nav className="container_da_library">
+            <h1 className="container_da_library_icon">
+              <img
+                className="iconeLivraria"
+                src={iconeLivraria}
+                alt="Ícone da Livraria"
+              />
               Your Library
-            </h2>
-            <i className="pi pi-plus"></i>
-          </div>
-          <div className="card_left_da_home">
+            </h1>
+            <button aria-label="Adicionar à biblioteca">
+              <i className="pi pi-plus"></i>
+            </button>
+          </nav>
+
+          <section className="card_left_da_home">
             <Barra className="card_left">
-              <div className="card">
-                <h2>create your first playlist</h2>
-                <p>its easy well help you</p> <button>create playlist</button>
-              </div>
-              <div className="card">
-                {" "}
-                <h2>create your first playlist</h2>
-                <p>its easy well help you</p> <button>create playlist</button>
-              </div>
+              <article className="card">
+                <h2>Crie sua primeira playlist</h2>
+                <p>É fácil, nós ajudamos você.</p>
+                <button>Criar playlist</button>
+              </article>
+              <article className="card">
+                <h2>Crie sua primeira playlist</h2>
+                <p>É fácil, nós ajudamos você.</p>
+                <button>Criar playlist</button>
+              </article>
             </Barra>
-          </div>
-          <div className="container_left_home_informations">
+          </section>
+
+          <section className="container_left_home_informations">
             <p className="infos_left">Legal</p>
-            <p className="infos_left">Segurança e Centro de privacidade</p>
-            <p className="infos_left">Politíca de privacidade</p>
+            <p className="infos_left">Segurança e Centro de Privacidade</p>
+            <p className="infos_left">Política de Privacidade</p>
             <p className="infos_left">Cookies</p>
             <p className="infos_left">Sobre anúncios</p>
             <p className="infos_left">Acessibilidade</p>
             <p id="infos_left" className="infos_left">
-              <b>Cookies</b>
+              <strong>Cookies</strong>
             </p>
             <div className="container_left_home_informations_linguagem">
               <i className="pi pi-globe"></i>
-              <p>Porgugues do Brasil</p>
+              <p>Português do Brasil</p>
             </div>
-          </div>
-        </section>
+          </section>
+        </aside>
+
         <section className="container_section_right_da_home">
           <div className="overlay">
             <Albums />
@@ -61,13 +71,18 @@ const Home = () => {
             <Footer />
           </div>
         </section>
-      </div>
-      <div className="ultimo">
-        <div>
+      </main>
+
+      <section className="ultimo">
+        <div className="container_ultimo">
           <h2>Testar Premium de graça</h2>
-          <p></p>
+          <p>
+            Increva-se ára curtir música ilimitada e podcasts só com alguns
+            anúncios. Não precisa de cartão de crédito
+          </p>
         </div>
-      </div>
+        <button>Increva-se grátis</button>
+      </section>
     </>
   );
 };
