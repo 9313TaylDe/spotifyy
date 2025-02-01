@@ -5,17 +5,35 @@ import Albums from "./Albums";
 import PopularArtists from "./PopularArtists";
 import PopularRadio from "./PopularRadio";
 import "../Home.css";
-import ModoDarkWhite from "../components/ModoDarkWhite";
 import Barra from "../components/Barra.jsx";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const Ultimo = () => {
+    const [showUltimo, setShowUltimo] = useState(false);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setShowUltimo(true);
+      }, 0.1);
+    }, []);
+
+    return (
+      <section className={`ultimo ${showUltimo ? "show" : ""}`}>
+        <div className="container_ultimo">
+          <h2>Testar Premium de graça</h2>
+          <p>
+            Increva-se ára curtir música ilimitada e podcasts só com alguns
+            anúncios. Não precisa de cartão de crédito
+          </p>
+        </div>
+        <button>Increva-se grátis</button>
+      </section>
+    );
+  };
   return (
     <>
-      <main
-        className="container_da_home"
-        id="container_main_home"
-        onClick={() => ModoDarkWhite}
-      >
+      <main className="container_da_home" id="container_main_home">
         <aside className="container_da_section_left_home">
           <nav className="container_da_library">
             <h1 className="container_da_library_icon">
@@ -32,18 +50,17 @@ const Home = () => {
           </nav>
 
           <section className="card_left_da_home">
-            <Barra className="card_left">
-              <article className="card">
-                <h2>Crie sua primeira playlist</h2>
-                <p>É fácil, nós ajudamos você.</p>
-                <button>Criar playlist</button>
-              </article>
-              <article className="card">
-                <h2>Crie sua primeira playlist</h2>
-                <p>É fácil, nós ajudamos você.</p>
-                <button>Criar playlist</button>
-              </article>
-            </Barra>
+            <Barra className="card_left"></Barra>
+            <article className="card">
+              <h2>Crie sua primeira playlist</h2>
+              <p>É fácil, nós ajudamos você.</p>
+              <button>Criar playlist</button>
+            </article>
+            <article className="card">
+              <h2>Crie sua primeira playlist</h2>
+              <p>É fácil, nós ajudamos você.</p>
+              <button>Criar playlist</button>
+            </article>
           </section>
 
           <section className="container_left_home_informations">
@@ -72,17 +89,7 @@ const Home = () => {
           </div>
         </section>
       </main>
-
-      <section className="ultimo">
-        <div className="container_ultimo">
-          <h2>Testar Premium de graça</h2>
-          <p>
-            Increva-se ára curtir música ilimitada e podcasts só com alguns
-            anúncios. Não precisa de cartão de crédito
-          </p>
-        </div>
-        <button>Increva-se grátis</button>
-      </section>
+      <Ultimo />
     </>
   );
 };

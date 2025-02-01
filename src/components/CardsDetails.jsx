@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ListaCards } from "./ListaCards";
 import { useMusicTimer } from "./ListaCards";
+import ModoDarkWhite from "./ModoDarkWhite";
 
 const CardsDetails = () => {
   const { id } = useParams();
@@ -90,6 +91,7 @@ const CardsDetails = () => {
 
   return (
     <div className="container_details">
+      <ModoDarkWhite />
       <Link to="/" className="pi pi-home"></Link>
       <div key={produto.id}>
         <h2>{produto.album}</h2>

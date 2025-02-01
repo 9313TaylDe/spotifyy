@@ -9,9 +9,82 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow-y: hidden;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 html {
   background-color: #000000;
+}
+
+/* Para notebooks menores (10.1" a 11.6") */
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* Para notebooks médios (13" a 14") */
+@media screen and (min-width: 1281px) and (max-width: 1440px) and (max-height: 900px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 80%;
+    padding: 15px;
+  }
+}
+
+/* Para notebooks padrão (15.6" a 17.3") */
+@media screen and (min-width: 1441px) and (max-width: 1920px) and (max-height: 1080px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    width: 75%;
+    padding: 20px;
+  }
+}
+
+/* 📱 Tablets Pequenos (7" a 8") - Exemplo: Amazon Fire, Galaxy Tab A7 */
+@media screen and (max-width: 708px) and (max-height: 1024px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* 💻 Tablets Médios (9" a 10.5") - Exemplo: iPad Air, Galaxy Tab S6 */
+@media screen and (min-width: 769px) and (max-width: 1024px) and (max-height: 1366px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 90%;
+    padding: 12px;
+  }
+}
+
+/* 🖥️ Tablets Grandes (11" a 14") - Exemplo: iPad Pro, Galaxy Tab S8 Ultra */
+@media screen and (min-width: 1025px) and (max-width: 1366px) and (max-height: 1024px) {
+  body {
+    font-size: 18px;
+    /* padding: 3px; */
+  }
+
+  .container {
+    width: 85%;
+    padding: 16px;
+  }
 }
